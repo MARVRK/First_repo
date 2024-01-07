@@ -3,6 +3,7 @@ c_ind= my_list.index('Pyton')               # looking for excatly index number o
 print(c_ind)
 count_mylist=my_list.count(8)               #counting the "X" itmes in the list
 #my_list.sort()                             #sorting the list of numbers (only)
+#my_list.sort(reverse=True)                 #same, but in reverse sorting the list of numbers (only)
 print(count_mylist)                         
 print(len(my_list))                         #len calculate the itmes inside the list
 print(my_list)
