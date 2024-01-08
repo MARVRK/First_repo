@@ -8,5 +8,3 @@ count_mylist=my_list.count(8)               #counting the "X" itmes in the list
 print(count_mylist)                         
 print(len(my_list))                         #len calculate the itmes inside the list
 print(my_list)
-
-didididid
