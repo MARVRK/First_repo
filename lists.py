@@ -4,6 +4,7 @@ print(c_ind)
 count_mylist=my_list.count(8)               #counting the "X" itmes in the list
 #my_list.sort()                             #sorting the list of numbers (only)
 #my_list.sort(reverse=True)                 #same, but in reverse sorting the list of numbers (only)
+#my_;ist.sort(key-len)                      #sorting the list of numbers by lenght of symbols per index.
 print(count_mylist)                         
 print(len(my_list))                         #len calculate the itmes inside the list
 print(my_list)
