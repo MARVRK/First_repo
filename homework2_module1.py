@@ -217,19 +217,19 @@
 # greet(**person_info)
 
 #################################################################
-def factorial(n):
-    if n < 2:
-        return 1
-    else:
-        return n * factorial(n - 1)
+# def factorial(n):
+#     if n < 2:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
 
 
-def number_of_groups(n, k):
-    this = factorial(n)/(factorial(n-k)*factorial(k))
-    print(int(this))
-    return int(this)
+# def number_of_groups(n, k):
+#     this = factorial(n)/(factorial(n-k)*factorial(k))
+#     print(int(this))
+#     return int(this)
 
-result=number_of_groups(50,7)
-print(result)   
+# result=number_of_groups(50,7)
+# print(result)   
     
     
