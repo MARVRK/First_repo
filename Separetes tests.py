@@ -6,16 +6,17 @@
 # # odd_numbers = numbers[:5]
 # # print(odd_numbers)
 
+# ############################################## --
+# name = input("type your name qrwa :")
+# surname = input("and surname also: ")
+# age = input("and your oldfuck age please: ")
 
-name = input("type your name qrwa :")
-surname = input("and surname also: ")
-age = input("and your oldfuck age please: ")
-# ############################################## ----> how to make to make exceptacne in
-try:
-    age = int(age) 
-    if str(age):
-        print("Uh... is that in dog years?")  
-except ValueError:
-        print(f'{age}you should write the number...')   
+# try:
+#     age = int(age) 
+#     if str(age):
+#         print("Uh... is that in dog years?")  
+# except ValueError:
+#         print(f'{age}you should write the number...')   
 
 ##############################################
+# def get_folder_name()
