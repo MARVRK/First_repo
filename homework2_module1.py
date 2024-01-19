@@ -29,14 +29,6 @@
 #     result = print("It is zero")
 
 
-# a = 0
-# while a < 6:
-#     a = a + 1
-#     if not a % 2:
-#         continue
-#     print(a)
-
-
 # for i in range(2, 10, 2):
 #     print(i)
 
@@ -109,7 +101,7 @@
 # values("a","b")
 
 ########################################### - how is roking integer
-# def factorial(n:r)->str:
+# def factorial(n)->str:
 #     result = 1
 #     for i in range(2, n + 2):
 #         result *= i
@@ -242,4 +234,18 @@
 #         print("Повернення результату для n = ", n, ": ", result)
 #         return result
 
-# print(factorial(5))
+# # print(factorial(5))
+# n = int(input("place some number: "))
+# i =0
+# while i < n :
+#     sum = i**2
+#     if not i:
+#         continue
+#     print (sum)
+
+
+# n = int(input("place some number: "))
+# for i in range(0,20):
+#     if i < n:
+#         i=i**2
+#         print(i)
