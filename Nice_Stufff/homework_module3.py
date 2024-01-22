@@ -1,4 +1,4 @@
-# ################################################
+# ################################################ <---- TASK 1
 from datetime import datetime
 
 def get_days_from_today(date_is, format_is):
@@ -10,7 +10,9 @@ while True:
         try:   
             date_is=input("Write date with '.' spacing format: ")
             format_is="%Y.%m.%d"
-            call=get_days_from_today(date_is,format_is)
+            to_summon_function=get_days_from_today(date_is,format_is)
         except ValueError :
             print(f"date_is {date_is} does not match format YYYY.MM.DD")
         break
+
+# ################################################ <---- TASK 2
