@@ -11,7 +11,7 @@ def get_days_from_today(date):
     except ValueError:
             print("Invalid ISOFormat , please use format YYYY-MM-DD")
      
-provide_date="2024-01-23"   
+provide_date="2024-01-31"   
 to_summon_function=get_days_from_today(provide_date)
 print(f"{to_summon_function} days")
     
