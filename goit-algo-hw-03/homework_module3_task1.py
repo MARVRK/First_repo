@@ -1,7 +1,7 @@
 
 from datetime import datetime
 
-def get_days_from_today(date: str):
+def get_days_from_today(date):
     try:
         date = datetime.fromisoformat(date)
         today_date= datetime.today()
@@ -10,14 +10,12 @@ def get_days_from_today(date: str):
     
     except ValueError:
             print("Invalid ISOFormat , please use format YYYY-MM-DD")
-    
-
-  
+     
 provide_date="2024-01-23"   
 to_summon_function=get_days_from_today(provide_date)
 print(f"{to_summon_function} days")
     
-################################################### <----- Please check alternative solution for Task 1
+################################################### <----- Please check alternative solution (without return) for Task 1
 
 # from datetime import datetime
 
