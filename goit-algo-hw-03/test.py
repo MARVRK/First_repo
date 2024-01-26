@@ -1,11 +1,3 @@
-import random
-
-
-a=set()
-
-for i in range(10):
-    this=random.randint(1,900)
-    a.add(this)
-
-
-print(a)
+# url_search = "<https://www.google.com/search?q=Cat+and+dog&ie=utf-8&oe=utf-8&aq=t>"
+# _, query = url_search.split('?')
+# print(query)
