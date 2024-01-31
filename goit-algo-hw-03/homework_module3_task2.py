@@ -13,16 +13,19 @@ def get_numbers_ticket(min, max, quantity):
              return []
         
         for i in range(quantity):
-             set_tickets.add(random.randint(min,max))
-             list_tickets=list(sorted(set_tickets))
+          if i in list_tickets:
+           print ("number already exist")  
+          else : 
+               set_tickets.add(random.randint(min,max))
+               list_tickets=list(sorted(set_tickets))
         return list_tickets
-                   
+        
 min_numbers=1
 max_numbers=1000
 tickets_quantity=int(input("Choose number of tickets in range 1-1000: "))
 shuffle_list=get_numbers_ticket(min_numbers,max_numbers,tickets_quantity)
 print(shuffle_list)
-
+  
 
 ################################################ <------------ alternative to task 2
 # import random

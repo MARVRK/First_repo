@@ -25,3 +25,4 @@ users = [
     {"name": "Jane Smith", "birthday": "1990.01.27"} ]
 
 print(get_upcoming_birthdays(users))
+
