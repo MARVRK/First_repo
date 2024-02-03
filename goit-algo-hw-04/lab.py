@@ -1,27 +1,65 @@
-from pathlib import Path
+def parse_input(user_input):
+    cmd, *args = user_input.split()
+    cmd = cmd.strip().lower()
+    return cmd, *args
 
-def get_cats_info(path):
-    cats_data_list=[] 
+def add_contact(args, contacts):
+    name, phone = args
+    contacts[name] = phone
+    return "Contact added."
+
+def change_contact (args, contacts):
     try:
-        if source.stat().st_size>0:                                                    
-                with open(path, 'r',encoding='utf-8') as fh:
-                    for line in fh.readlines():
-                        raw_data=[part.strip() for part in line.split(',')]
-                        cats_data_list.append({"id":raw_data[0],"name":raw_data[1],"age":raw_data[2]})       
-                return cats_data_list
+        name, phone = args   
+        if name in contacts:
+                contacts[name]=phone
+                return "Contact Updated"     
         else:
-            print("file is empty")   
-
-    except FileNotFoundError :
-        print("Cannot find file:'crazy_cats.txt'")
-    except IndexError:
-        print("searched index is out of range")
+                return "Name doesn't match or not exist!"
+    except ValueError :
+        return "not enough values to unpack (expected 2, got 1)"
    
-# with open('crazy_cats.txt', 'w') as file:
-        # file.write('60b90c1c13067a15887e1ae1,Tayson,3\n60b90c2413067a15887e1ae2,Vika,1\n60b90c2e13067a15887e1ae3,Barsik,2\n60b90c3b13067a15887e1ae4,Simon,12\n60b90c4613067a15887e1ae5,Tessi,5')
+def show_phone (args, contacts):
+    key = args[0] if args else None
+    if key in contacts:
+        phone_number = contacts[key]
+        return f"Phone number for {key}: {phone_number}"
+    else:
+        return "there is now key in then list!"
+    
+def show_all(contacts):
+    list_of_contacts=[]
+    if contacts:
+        list_of_contacts.append([f"{name}: {phone_number}" for name, phone_number in contacts.items()])
+        return list_of_contacts
+    else:
+        return "List of contacts is empty."
 
-source=Path('crazy_cats.txt')
-cats_info=get_cats_info(source) 
-print(cats_info)
+def main():
+    contacts = {}
+    print("Welcome to the assistant bot!")
+    while True:
+        user_input = input("Enter a command: ")
+        command, *args = parse_input(user_input)
+        if command in ["close", "exit"]:
+            print("Good bye!")
+            break
+        elif command == "hello":
+            print("How can I help you?")
+        elif command == "add":
+            print(add_contact(args, contacts))
+        elif command == "phone":
+            print(show_phone(args,contacts))
+        elif command == "all":
+            print(show_all(contacts))
+        elif command == "change":
+            print(change_contact(args, contacts))
+        elif command == "test":
+            print(test(contacts))
+        else:
+            print("Invalid command.")
 
+if __name__ == "__main__":
+    main()
 
+    
