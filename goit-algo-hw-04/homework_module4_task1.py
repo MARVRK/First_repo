@@ -29,4 +29,3 @@ import_salary_data=total_salary(source)
 if import_salary_data :
     overall,average = import_salary_data
     print(f"Загальна сума заробітної плати: {overall}, Середня заробітна плата: {average}")
-
