@@ -63,7 +63,7 @@ class Record:
                 self.phones.remove(phone)
     
     def edit_phone(self, old_phone_number: str, new_phone_number: str):
-        for phone in self.phones:
+        for i, phone in enumerate(self.phones):
             if phone.number == old_phone_number:
                 self.phones.remove(phone)
                 new_phone=Phone(new_phone_number)
