@@ -1,28 +1,28 @@
 
 
-# Сутності:
+# # Сутності:
 
-# Field: Базовий клас для полів запису.                                                           +
-# Name: Клас для зберігання імені контакту. Обов'язкове поле.                                     +
-# Phone: Клас для зберігання номера телефону. Має валідацію формату (10 цифр).                    +
-# Record: Клас для зберігання інформації про контакт, включаючи ім'я та список телефонів.         +
-# AddressBook: Клас для зберігання та управління записами.
-
-
-# Функціональність:
-
-# AddressBook:Додавання записів.  +
-# Пошук записів за іменем.        +
-# Видалення записів за іменем.    +
-
-# Record:Додавання телефонів.     +
-# Видалення телефонів.            +
-# Редагування телефонів.          +
-# Пошук телефону.                 +
+# # Field: Базовий клас для полів запису.                                                           +
+# # Name: Клас для зберігання імені контакту. Обов'язкове поле.                                     +
+# # Phone: Клас для зберігання номера телефону. Має валідацію формату (10 цифр).                    +
+# # Record: Клас для зберігання інформації про контакт, включаючи ім'я та список телефонів.         +
+# # AddressBook: Клас для зберігання та управління записами.
 
 
+# # Функціональність:
 
-##############################################################
+# # AddressBook:Додавання записів.  +
+# # Пошук записів за іменем.        +
+# # Видалення записів за іменем.    +
+
+# # Record:Додавання телефонів.     +
+# # Видалення телефонів.            +
+# # Редагування телефонів.          +
+# # Пошук телефону.                 +
+
+
+
+# ##############################################################
 from collections import UserDict
 
 class Field:
@@ -63,13 +63,13 @@ class Record:
                 self.phones.remove(phone)
     
     def edit_phone(self, old_phone_number: str, new_phone_number: str):
-        for i, phone in enumerate(self.phones):
+        for  phone in self.phones:
             if phone.number == old_phone_number:
                 self.phones.remove(phone)
                 new_phone=Phone(new_phone_number)
                 new_phone.add_phone(new_phone_number)
                 self.phones.append(new_phone)
-            
+         
     def find_phone(self, phone_number: str):
         for phone in self.phones:
             if phone.number == phone_number:
@@ -121,3 +121,35 @@ print(f"{john.name}: {found_phone}")  # Виведення: 5555555555
 
 # Видалення запису Jane
 book.delete("Jane")
+
+
+
+class Contacts:
+    current_id = 1
+
+    def __init__(self):
+        self.contacts = []
+
+    def list_contacts(self):
+        return self.contacts
+
+    def add_contacts(self, name, phone, email, favorite):
+        self.contacts.append(
+            {
+                "id": Contacts.current_id,
+                "name": name,
+                "phone": phone,
+                "email": email,
+                "favorite": favorite,
+            }
+        )
+        Contacts.current_id += 1
+
+    def get_contact_by_id(self, id):
+        result = list(filter(lambda contact: contact.get("id") == id, self.contacts))
+        return result[0] if len(result) > 0 else None
+
+    def remove_contacts(self, id):
+        for contact in self.contacts:
+            if contact[id] == id:
+                self.contacts.remove(contact)
